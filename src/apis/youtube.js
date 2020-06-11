@@ -5,10 +5,12 @@ import axios from 'axios'
 const API_KEY = 'AIzaSyD_-ecmjXyKU5jhscwcdRD0lYMyoW-xY_E'
 
 export default axios.create({
-  baseURL: 'GET https://www.googleapis.com/youtube/v3/',
-  params: {
-    part: 'snippet',
-    maxResult: 5,
-    key: API_KEY,
-  }
+  baseURL: 'https://www.googleapis.com/youtube/v3/'
 })
+
+export const baseParams = {
+  part: 'snippet',
+  type: 'video',
+  maxResult: 5,
+  key: API_KEY,
+}

@@ -11,8 +11,6 @@ class SearchBar extends React.Component {
 
   onFormSubmit(event) {
     event.preventDefault()
-
-    
     this.props.onSearch(this.state.term)
   }
 
@@ -23,6 +21,7 @@ class SearchBar extends React.Component {
           <div className="field">
             <label>Video Search</label>
             <input type="text" value={this.state.term} onChange={this.onInputChange.bind(this)} />
+            <p style={{padding: '0.5em 0.5em 0em 0em', textAlign: 'right'}}>{this.props.videoCount || 0} videos found</p>
           </div>
         </form>
       </div>
